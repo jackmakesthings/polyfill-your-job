@@ -53,31 +53,56 @@
 
 				<section>
 					<h2>This is a talk about polyfills.</h2>
+
+					<aside class="notes">Hi I’m Jack.
+
+					First off, show of hands, who all has used Polyfills.?
+
+					Who hasn't, but knows what a polyfill is?
+
+					Ok, cool. I realized as I was writing this talk that I had to ask that, because -- well, it's 2015. Even IE is starting to get the hang of standards. There's a whole generation of young developers that never had to fake a border-radius, and that's awesome.</aside>
+
+
 				</section>
 
 				<section>
 					<h2>This is a talk about <s style="opacity: 0.4">polyfills</s> optimism.</h2>
+					<aside class="notes">
+					The truth is, I'm not here to just talk about polyfills. I'm here to talk about adapting. And optimism. But we'll get there.</aside>
 				</section>
 
 				<!-- <section> -->
 					<section>
 						<h2>context.</h2>
+						<aside class="notes">So, a little context. I've wanted this talk to exist for a long time. I've been going to Sass and other code-oriented meetups for a few years now, and I've had the privilege of listening to a lot of really smart people talk about how they work. But I started seeing a pattern -- a gap in what was being talked about.</aside>
 					</section>
 
 					<section>
-						<p>[illustration: speakers]</p>
+
+					<img src="img/unicorn4.svg" alt="neigh" class="unicorn" />
+
+					<aside class="notes">
+					A lot of the speakers I was hearing had clearly found, or created, what many of us would consider ideal situations, work-wise. Which is not to say they all led charmed lives and everything went smoothly - I've never heard anyone claim that - but I'm talking, people who ran their own small companies. Or who freelanced, and had enough of a client pool to pick and choose what they worked on. Or who happened to work somewhere with a super-modern mentality and plenty of resources. Which makes sense, I mean - who doesn't want to hear about the really cool projects and the implemented best practices, and all that? Especially if it's something you yourself don't have yet. We like to hear about what could be.</aside>
 					</section>
+
+					<!-- <section>
+						<p>[illustration: speakers]</p>
+					</section> -->
 
 					<section>
 						<p>
 							<img class="svg graphic asking plain" src="img/raised-hand.svg" alt="" style="max-height: 50vh;">
 						</p>
+						<aside class="notes">
+						But what struck me as unfortunate was always the Q&A after those kinds of talks. Someone -- sometimes me -- would ask, "What if my boss doesn't want to work that way?" or "what if we don't have those options?" and so often, the response was just kind of... </aside>
 					</section>
 
 					<section>
 						<p>
 						<img class="svg graphic dunno plain" src="img/dot-dot-dot.svg" alt="" style="max-height: 50vh;">
 						</p>
+						<aside class="notes">
+						"Well, you should quit your job." Which, okay, that's one option. But it's a pretty extreme course of action, and it's not right for everyone, for a whole bunch of different reasons. Which got me thinking - what if we looked at our jobs, and their flaws, like we look at the technology we use?</aside>
 					</section>
 				<!-- </section> -->
 
@@ -93,9 +118,9 @@
 						<!-- <p class="t t-3">
 							<span class="fragment question">?</span>
 						</p> -->
-						</blockquote>
-						<small></small>
-					</section>
+						<!-- </blockquote> -->
+						<!-- <small></small> -->
+					<!-- </section> -->
 
 					<section class="thesis">
 						<blockquote class="quoted">
@@ -108,15 +133,24 @@
 						</p> -->
 						</blockquote>
 						<small>"What I need isn't supported yet."</small>
+						<aside class="notes">
+						This is what one of those Q&A exchanges generally looked like, from the asking side. But let's pretend it isn't. Let's change contextx here, what if this was something like this...
+						</aside>
 					</section>
 
 					<section class="thesis">
 						<blockquote class="quoted">
 							<span class="t t-1"><img src="img/html5.svg" alt="" class="inline-icon"></span>
 							<span class="t t-2"><img src="img/ie.svg" alt="" class="inline-icon"></span>
-							<span class="t t-3"><img src="img/html5.svg" alt="" class="inline-icon"> + <b class="asterisk inline-icon">*</b></span>
+							<span class="t t-3"><img src="img/html5.svg" alt="" class="inline-icon"> + <b class="fragment asterisk inline-icon">*</b></span>
 						</blockquote>
 						<small>"Same."</small>
+
+						<aside class="notes">
+						What would we put there in place of "quit"? I can...stop supporting IE9? I can give up on making websites?
+
+						Mm. Probably not. (fragment) We'd say "I can still use that, but I'll add a polyfill."
+						</aside>
 					</section>
 				<!-- </section> -->
 
@@ -128,6 +162,15 @@
 							<span class="t t-3"></span>
 						</blockquote>
 						<small class="fragment">–Every polyfill ever written.</small>
+
+
+						<aside class="notes">
+						When you think about it, what we have there is the anatomy of every polyfill.
+						I want to x, but I can't yet because y In the meantime, I can z.
+
+						And what's interesting is, when you start thinking about the frustrating aspects of work like that, like they were just bugs or glitches, your natural response - as someone who solves problems for a living - isn't going to be "well, I guess I just can't have that, not at this job". You're more likely to think, "okay...but let me check StackOverflow and CanIUse, let me do some research. It might not be perfect, but there's probably a polyfill out there that will help."
+
+						</aside>
 					</section>
 				<!-- </section> -->
 
@@ -138,6 +181,10 @@
 				<section>
 					<h1>practical examples</h1>
 					<p>(aka story time)</p>
+					<aside class="notes">
+
+					So taking that general idea -- let's apply it to some real-world problems.
+					</aside>
 				</section>
 
 				<section class="thesis">
@@ -152,19 +199,34 @@
 					</blockquote>
 					<small>*Modular scale, &nbsp;vertical rhythm,&nbsp; 
 					color scheme tools – <br>&nbsp;any design-related Sass framework or system</small>
+
+					<aside class="notes">
+					I want to use (modular scale/vertical rhythm/awesome new Sass technique), but I can't yet because the site wasn't designed to follow those patterns. In the meantime, I can...(fragment) find the patterns it already has.</aside>
+
 				</section>
 
 				<section>
 					<img src="img/sachein.png" alt="Screenshot of Sache.in showing Sass plugins" class="">
+					<small>Sache.in</small>
+					<aside class="notes">
+
+					The whole appeal of, say, Sass modular scale - is what?
+					</aside>
+
 				</section>
 
 				<section>
 					<h2>Patterns.</h2>
+					<aside class="notes">
+					It's the patterns. It gives us a set of logical rules, and that means clean code and happy devs, right? But coders just made the tools - where did we get these concepts in the first place?
+					</aside>
 				</section>
 
 				<section>
 					<h2>Designers!</h2>
-					
+					<aside class="notes">
+					This sounds obvious, but in practice I think we forget it sometimes. Personal anecdote time - I was recently on a project that worked along pretty old-fashioned lines. 
+					</aside>
 				</section>
 
 				<section>
@@ -186,11 +248,21 @@
 							</tr>
 						</tbody>
 					</table>
+					<aside class="notes">
+					I mean, designers doing their photoshop comps, getting the clients to approve the PSDs, then giving us those PSDs to magically turn into code --- yeah. One of those projects. What I wanted and what I had to work with seemed miles apart at first.
+
+					But at the same time, the designs seemed well-thought out, balanced -- so I asked the designer to explain how they'd created these styles, and it turned out, there was a system. There were several, actually. Fonts and spacing and layout - they all followed a very consistent set of rules, they'd all been chosen with intent. Once they'd given me an overview, I started abstracting those rules out into code.
+
+					Armed with that, I didn't need a framework. It was okay if I couldn't use the cool new library on the block, for this particular project. The more I reached out and communicated with the designer, the more I had information I could translate to variables, mixins, patterns in my sass.
+
+					So if you're frustrated at having to code a design that doesn't fit into a framework, take the time to really get to know that design. Instead of designing to fit a system, build a system that fits the designs. There's your polyfill.
+
+					</aside>
 				</section>
 
-				<section>
+				<!-- <section>
 					[translating psd to sass]
-				</section>
+				</section> -->
 
 <!-- 				<section class="thesis">
 					<h3>case 2: it only <i>looks</i> easy</h3>
@@ -210,10 +282,17 @@
 							<span class="fragment current-visible q">?</span> 
 						</p>
 					</blockquote>
+					<aside class="notes">
+					Let's look at another common issue: I want to keep my styles small and neat but I can't yet because there are a lot of complex/hard-to-manage requirements (from non-tech stakeholders, usually) In the meantime, I can....
+					</aside>
 				</section>
 
 				<section>
 					<img src="tasks.png" alt="XKCD comic" class="stretch">
+					<small>xkcd.com</small>
+					<aside class="notes">
+					I think we've all hit this at some point. Someone decides they want a certain look or function on the page, assuming it'll be a piece of cake, when it's actually a huge headache to code. Sometimes it's a business requirement, sometimes it's a design decision -- whatever it is, someone's insisting on it. Probably someone who's never written front-end code. It's really frustrating. So what can you do, short of flipping the table and giving up on the project?
+					</aside>
 				</section>
 
 				<section class="thesis">
@@ -226,12 +305,18 @@
 							<span class="fragment current-visible t t-5">educate</span>
 						</p>
 					</blockquote>
+					<aside class="notes">
+					In the meantime I can educate.
+
+					Listen. We can't expect the average designer, project manager, et cetera -- to know all the nuances of overflow scrolling or webfont performance. That's our job. What we can do is teach them about why these are pain points.
+
+					Now, 'educate', that can sound like a daunting task, especially when you're trying to communicate something technical to someone without a tech background. If you've ever had to do tech support for your parents, you know what I'm talking about. But believe me, this is easier than you'd think, and here's the key:
+					</aside>
 				</section>
 			
 
 				<section>
 					<h3>Show and tell</h3>
-					(codepen snapshot or logo)
 				</section>
 
 
@@ -245,9 +330,11 @@
 							<span class="fragment t t-5">take good notes.</span>
 						</p>
 					</blockquote>
+					<aside class="notes">
+					If you start explaining css rendering quirks to your manager and you can just...see their eyes start to glaze over...try swapping the explanation for a codepen. Rig up a quick demo that shows what you're trying to say. Nothing shakes a discussion out of a rut faster than a working example; give people something they can see and interact with. Take the time to do this, and you're helping everyone. You're helping them by empowering them to make good decisions with what they now know -- you're helping the next dev that person works with, by clearing this hurdle from their path -- and you're helping yourself, by establishing that you are someone who knows their stuff. Someone who's done their homework. If you're aiming to have more influence over how things get done, that's a great start.
+					</aside>
 				</section>
 
-				<!-- <section><p>--</p></section>
 
 				
 
@@ -255,76 +342,55 @@
 					<blockquote>
 						<span class="t t-1">my project would run smoothly,<br></span>
 						<span class="t t-2">the details keep changing.</span>
-						<span class="t t-3">take good notes.</span>
+						<span class="t t-3"><span class="fragment">take good notes.</span></span>
 					</blockquote>
+					<aside class="notes">
+					Okay, last challenge: I want this project to be fun and drama-free and come out great But I can't yet because the expectations/roles/goals aren't consistent In the meantime I can (fragment)...keep good records.
+
+					So here's the thing: as long as there are human beings involved in your project, things are going to go awry. Plans are going to change. Every time. The smoothest projects I've been on, with the best clients -- they're as subject to this as any other project. You can't fix it, but you can polyfill it. 
+					</aside>
 				</section>
 
-				<section>
-				<p>I want _____</p>
-				<p>But currently, I'm stuck with _____</p>
-				<p>So for now, I'll ______</p>
-				</section>
 
-
-				<section>
-				<p>I want _____</p>
-				<p>But currently, I'm stuck with _____</p>
-				<p>So for now, I can ______</p>
-				</section>
-
-				<section>
-				<p>I want to _____</p>
-				<p>But I can't yet because _____</p>
-				<p>For now, I can ______</p>
-				</section>
-
-				<section>
-				<p>I want to _____</p>
-				<p>But currently, _____</p>
-				<p>Until that changes, I can ______</p>
-				</section>
-
-				<section>
-				<p>I want to _____</p>
-				<p>But I can't yet because _____</p>
-				<p>For now, ______</p>
-				</section>
-
-				<section>
-				<p>I want _____</p>
-				<p>But _____</p>
-				<p>Until that changes, I can ______</p>
-				</section>
-
-				<section>
-				<p>I wish ____</p>
-				<p>But first, _____</p>
-				<p>Until then, _______</p>
-				</section>
-
-				<section><p>--</p></section> -->
-
-
-				<section>
-					(illustration of code edits)
-				</section>
+ 
+				<!-- <section> -->
+					<!-- (illustration of code edits) -->
+				<!-- </section> -->
 
 
 				<section>
 					<p><i>// write things down</i></p>
+					<aside class="notes">
+					And you do that by writing things down.
+
+					We kept a file on one of my last projects that we were calling "global-specs.scss". It was one of the first imports in our sass, so it was widely available, and it served a very specific purpose. This file was where we put any number, color, any change, whatever -- anything we were explicitly given as a spec by our designers. No assumptions, no inferred anything, just straight-up rules that we'd been told were the approved decision at the time.
+
+					The obvious benefit of this was that, when these details inevitably changed, we were already set up to quickly update them. We also had something we could point to and confidently say, "hey, but remember, this is what you said last time" - which did come in handy more than once.
+
+					The less-obvious benefit was that we could very easily see which ones kept changing over and over again, which was typically a sign that a larger conversation needed to happen. The client keeps asking us to change the font sizes, but only at one breakpoint? Maybe it's time to revisit how we're doing responsive type. The spacing on this module just got changed and now it almost matches this other one? Maybe there's an opportunity for refactoring here. Things like that.
+
+					Oh, and on a tangent -- comment your own decisions too. Later, when you're trying to remember why you had to handle something a certain way, you'll be glad you did.
+					</aside>
 				</section>
 
-				<section>
+				<!-- <section>
 					(view of some recent sass i wrote, w/comments)
-				</section>
+				</section> -->
 
 
 				<section>
 					<h2>This is a talk about polyfills <i>and</i> optimism.</h2>
+					<aside class="notes">
+					There is another reason I liked the metaphor of polyfills, as I was coming up with this talk. I liked it because if I had to summarize where polyfills come from, I'd say they come from optimism. When you write a polyfill, or use one, you're saying "someday this will be obsolete". They're temporary by design. Hopefully, so is my advice.
+
+					We want to work under perfect conditions, but we can't, because reality is complicated and people aren't standards-compliant. In the meantime...
+					</aside>
 				</section>
 
 				<section>
 					<h1 class="big-star">*</h1>
+					<aside class="notes">well, we can figure something out. Thanks.
+					</aside>
 				</section>
 
 				<section>
